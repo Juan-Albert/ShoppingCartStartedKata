@@ -24,9 +24,4 @@ app.MapGet("/availableProducts", () => new Product(0, "Patata", 0))
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
-
 record Product(int Id, string Name, decimal Price);
