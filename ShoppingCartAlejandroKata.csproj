@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Test\**"/>
+        <Content Remove="Test\**"/>
+        <EmbeddedResource Remove="Test\**"/>
+    </ItemGroup>
+
+
+    <ItemGroup>
+        <None Remove="Test\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <_ContentIncludedByDefault Remove="Test\bin\Debug\net9.0\Test.deps.json"/>
+        <_ContentIncludedByDefault Remove="Test\bin\Debug\net9.0\Test.runtimeconfig.json"/>
+        <_ContentIncludedByDefault Remove="Test\obj\project.assets.json"/>
+        <_ContentIncludedByDefault Remove="Test\obj\project.packagespec.json"/>
+        <_ContentIncludedByDefault Remove="Test\obj\Test.csproj.nuget.dgspec.json"/>
+    </ItemGroup>
+
+</Project>

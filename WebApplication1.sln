@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCartAlejandroKata", "ShoppingCartAlejandroKata.csproj", "{A1436F58-698A-456E-99F7-52402D624838}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{1DD67F90-0BE8-4E3F-B2C7-4B2A69A73389}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1436F58-698A-456E-99F7-52402D624838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1436F58-698A-456E-99F7-52402D624838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1436F58-698A-456E-99F7-52402D624838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1436F58-698A-456E-99F7-52402D624838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DD67F90-0BE8-4E3F-B2C7-4B2A69A73389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD67F90-0BE8-4E3F-B2C7-4B2A69A73389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD67F90-0BE8-4E3F-B2C7-4B2A69A73389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD67F90-0BE8-4E3F-B2C7-4B2A69A73389}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
