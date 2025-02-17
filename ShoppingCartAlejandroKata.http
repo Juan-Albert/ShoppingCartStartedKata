@@ -1,6 +1,6 @@
 @ShoppingCartAlejandroKata_HostAddress = http://localhost:5275
 
-GET {{ShoppingCartAlejandroKata_HostAddress}}/weatherforecast/
+GET {{ShoppingCartAlejandroKata_HostAddress}}/availableProducts/
 Accept: application/json
 
 ###
