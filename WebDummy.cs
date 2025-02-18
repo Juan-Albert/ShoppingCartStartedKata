@@ -1,4 +1,4 @@
-﻿namespace ShoppingCartAlejandroKata;
+﻿namespace ShoppingCartStartedKata;
 
 public interface WebDummy
 {

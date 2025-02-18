@@ -4,8 +4,12 @@ using ShoppingCartStartedKata.Domain;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllers();
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddSingleton<Cart>();
 
 var app = builder.Build();
 
@@ -17,10 +21,31 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/availableProducts", () => new Product(0, "Patata", 0));
+app.UseAuthorization();
 
-app.MapGet("/cartContent", () => "");
+app.MapControllers();
 
-app.MapPost("/addProduct", (Product toAdd) => Results.Created("Product", toAdd));
+app.MapGet("/cartContent", (Cart cart) => cart);
+
+app.MapPost("/addProduct", (Product toAdd, Cart cart) =>
+{
+    cart.AddProduct(toAdd);
+    return Results.Created("Product", toAdd);
+});
 
 app.Run();
+
+public class Cart
+{
+    private List<Product> products = new();
+
+    public void AddProduct(Product product)
+    {
+        products.Add(product);
+    }
+
+    public override string ToString()
+    {
+        return products.Count == 0 ? "{}" : string.Join(", ", products);
+    }
+}
