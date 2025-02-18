@@ -16,11 +16,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
 app.MapGet("/availableProducts", () => new Product(0, "Patata", 0));
 
 app.MapPost("/addProductToCart", () => new Product(0, "Patata", 0));
