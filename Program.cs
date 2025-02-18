@@ -18,6 +18,6 @@ app.UseHttpsRedirection();
 
 app.MapGet("/availableProducts", () => new Product(0, "Patata", 0));
 
-app.MapPost("/addProductToCart", () => new Product(0, "Patata", 0));
+app.MapGet("/cartContent", () => "");
 
 app.Run();

@@ -27,5 +27,18 @@ public class ShoppingCartTest
         var content = await result.Content.ReadAsStringAsync();
         content.Should().Contain("Patata");
     }
-    
+
+    [Fact]
+    public async Task ShowCartContent()
+    {
+        var webFactory = new WebApplicationFactory<WebDummy>();
+        var client = webFactory.CreateClient();
+
+        var result = await client.GetAsync("/cartContent");
+
+        result.IsSuccessStatusCode.Should().BeTrue();
+        var content = await result.Content.ReadAsStringAsync();
+        content.Should().BeEmpty();
+    }
+
 }
