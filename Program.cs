@@ -25,8 +25,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapGet("/cartContent", (Cart cart) => cart);
-
 app.MapPost("/addProduct", (Product toAdd, Cart cart) =>
 {
     cart.AddProduct(toAdd);

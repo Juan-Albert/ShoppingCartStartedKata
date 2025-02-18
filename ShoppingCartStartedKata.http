@@ -5,6 +5,11 @@ Accept: application/json
 
 ###
 
+GET {{ShoppingCartStartedKata_HostAddress}}/showCartContent/
+Accept: application/json
+
+###
+
 POST {{ShoppingCartStartedKata_HostAddress}}/addProduct/
 Content-Type: application/json
 

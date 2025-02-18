@@ -1,8 +1,8 @@
-using ShoppingCartStartedKata.Domain;
+namespace ShoppingCartStartedKata.Domain;
 
 public class Cart
 {
-    private List<Product> products = new();
+    private readonly List<Product> products = new();
 
     public void AddProduct(Product product)
     {
