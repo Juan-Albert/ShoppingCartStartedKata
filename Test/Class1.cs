@@ -13,13 +13,13 @@ namespace Test;
 
 // Calcular el total final.
 
-public class YTcfvhgv
+public class ShoppingCartTest
 {
     [Fact]
     public async Task ShowAvailableProducts()
     {
-        var kiasdjfbh = new WebApplicationFactory<Khbajhsdfb>();
-        var client = kiasdjfbh.CreateClient();
+        var webFactory = new WebApplicationFactory<WebDummy>();
+        var client = webFactory.CreateClient();
 
         var result = await client.GetAsync("/availableProducts");
 
@@ -27,4 +27,5 @@ public class YTcfvhgv
         var content = await result.Content.ReadAsStringAsync();
         content.Should().Contain("Patata");
     }
+    
 }

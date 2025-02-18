@@ -21,6 +21,8 @@ var summaries = new[]
 
 app.MapGet("/availableProducts", () => new Product(0, "Patata", 0));
 
+app.MapPost("/addProductToCart", () => new Product(0, "Patata", 0));
+
 app.Run();
 
 record Product(int Id, string Name, decimal Price);

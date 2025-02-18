@@ -1,6 +1,6 @@
 ﻿namespace ShoppingCartAlejandroKata;
 
-public interface Khbajhsdfb
+public interface WebDummy
 {
     
 }
