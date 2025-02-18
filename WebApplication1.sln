@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCartAlejandroKata", "ShoppingCartAlejandroKata.csproj", "{A1436F58-698A-456E-99F7-52402D624838}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCartStartedKata", "ShoppingCartStartedKata.csproj", "{A1436F58-698A-456E-99F7-52402D624838}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{1DD67F90-0BE8-4E3F-B2C7-4B2A69A73389}"
 EndProject
