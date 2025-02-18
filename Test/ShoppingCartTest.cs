@@ -1,6 +1,8 @@
-﻿using FluentAssertions;
+﻿using System.Net.Http.Json;
+using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
 using ShoppingCartAlejandroKata;
+using ShoppingCartStartedKata.Domain;
 using Xunit;
 
 namespace Test;
@@ -39,6 +41,18 @@ public class ShoppingCartTest
         result.IsSuccessStatusCode.Should().BeTrue();
         var content = await result.Content.ReadAsStringAsync();
         content.Should().BeEmpty();
+    }
+
+    [Fact]
+    public async Task ShowProducts()
+    {
+        var webFactory = new WebApplicationFactory<WebDummy>();
+        var client = webFactory.CreateClient();
+        var potato = Product.Potato();
+        
+        var result = await client.PostAsJsonAsync("/addProduct", potato);
+        
+        result.IsSuccessStatusCode.Should().BeTrue();
     }
 
 }

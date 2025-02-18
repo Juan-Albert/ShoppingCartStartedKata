@@ -1,6 +1,17 @@
-@ShoppingCartAlejandroKata_HostAddress = http://localhost:5275
+@ShoppingCartStartedKata_HostAddress = http://localhost:5275
 
-GET {{ShoppingCartAlejandroKata_HostAddress}}/availableProducts/
+GET {{ShoppingCartStartedKata_HostAddress}}/availableProducts/
 Accept: application/json
+
+###
+
+POST {{ShoppingCartStartedKata_HostAddress}}/addProduct/
+Content-Type: application/json
+
+{
+  "id": "0",
+  "name": "Potato",
+  "price": "1.5"
+}
 
 ###

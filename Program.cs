@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using ShoppingCartStartedKata.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,5 +20,7 @@ app.UseHttpsRedirection();
 app.MapGet("/availableProducts", () => new Product(0, "Patata", 0));
 
 app.MapGet("/cartContent", () => "");
+
+app.MapPost("/addProduct", (Product toAdd) => Results.Created("Product", toAdd));
 
 app.Run();
