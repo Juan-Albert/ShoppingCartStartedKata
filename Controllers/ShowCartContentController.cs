@@ -7,7 +7,7 @@ namespace ShoppingCartStartedKata.Controllers;
 [Route("carts")]
 public class ShowCartContentController(IList<Cart> carts) : ControllerBase
 {
-    [HttpGet]
+    [HttpGet("{cartId}")]
     public Cart GetCart([FromRoute] string cartId)
     {
         if (!carts.Any(cart => cart.Id == cartId))
