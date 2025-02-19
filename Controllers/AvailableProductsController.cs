@@ -10,6 +10,6 @@ public class AvailableProductsController : ControllerBase
     [HttpGet]
     public IEnumerable<Product> Get()
     {
-        return [new Product(0, "Patata", 0)];
+        return [Product.Potato];
     }
 }

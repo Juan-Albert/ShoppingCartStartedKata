@@ -27,7 +27,7 @@ public class ShoppingCartTest
 
         result.IsSuccessStatusCode.Should().BeTrue();
         var content = await result.Content.ReadAsStringAsync();
-        content.Should().Contain("Patata");
+        content.Should().Contain(Product.Potato.Name);
     }
 
     [Fact]
@@ -48,7 +48,7 @@ public class ShoppingCartTest
     {
         var webFactory = new WebApplicationFactory<WebDummy>();
         var client = webFactory.CreateClient();
-        var potato = Product.Potato();
+        var potato = Product.Potato;
         
         var postResult = await client.PostAsJsonAsync("/addProduct", potato);
         
@@ -58,7 +58,7 @@ public class ShoppingCartTest
         
         getResult.IsSuccessStatusCode.Should().BeTrue();
         var content = await getResult.Content.ReadAsStringAsync();
-        content.Should().Contain("Potato");
+        content.Should().Contain(Product.Potato.Name);
     }
 
 }
