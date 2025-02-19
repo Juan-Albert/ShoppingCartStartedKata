@@ -7,9 +7,12 @@ public class Cart
     public IReadOnlyList<Product> Products => products;
     public Decimal TotalPrice => products.Sum(x => x.Price);
 
-    public void AddProduct(Product product)
+    public void AddProduct(Product toAdd) => products.Add(toAdd);
+
+    public void AddProduct(IEnumerable<Product> toAdd)
     {
-        products.Add(product);
+        foreach (var product in toAdd)
+            AddProduct(product);
     }
 
     public override string ToString()
