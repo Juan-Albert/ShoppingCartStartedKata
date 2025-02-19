@@ -1,7 +1,7 @@
 ﻿using System.Net.Http.Json;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
-using ShoppingCartAlejandroKata;
+using ShoppingCartStartedKata;
 using ShoppingCartStartedKata.Domain;
 using Xunit;
 
@@ -36,11 +36,11 @@ public class ShoppingCartTest
         var webFactory = new WebApplicationFactory<WebDummy>();
         var client = webFactory.CreateClient();
 
-        var result = await client.GetAsync("/cartContent");
+        var result = await client.GetAsync("/showCartContent");
 
         result.IsSuccessStatusCode.Should().BeTrue();
         var content = await result.Content.ReadAsStringAsync();
-        content.Should().BeEmpty();
+        content.Should().Be("{\"products\":[]}");
     }
 
     [Fact]
@@ -50,9 +50,15 @@ public class ShoppingCartTest
         var client = webFactory.CreateClient();
         var potato = Product.Potato();
         
-        var result = await client.PostAsJsonAsync("/addProduct", potato);
+        var postResult = await client.PostAsJsonAsync("/addProduct", potato);
         
-        result.IsSuccessStatusCode.Should().BeTrue();
+        postResult.IsSuccessStatusCode.Should().BeTrue();
+        
+        var getResult = await client.GetAsync("/showCartContent");
+        
+        getResult.IsSuccessStatusCode.Should().BeTrue();
+        var content = await getResult.Content.ReadAsStringAsync();
+        content.Should().Contain("Potato");
     }
 
 }

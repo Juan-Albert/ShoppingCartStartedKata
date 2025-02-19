@@ -7,8 +7,6 @@ namespace ShoppingCartStartedKata.Controllers;
 [Route("[controller]")]
 public class ShowCartContentController(Cart cart) : ControllerBase
 {
-    private readonly Cart cart = cart;
-
     [HttpGet]
     public Cart Get()
     {
