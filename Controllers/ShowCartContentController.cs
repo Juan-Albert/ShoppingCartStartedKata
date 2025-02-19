@@ -4,12 +4,20 @@ using ShoppingCartStartedKata.Domain;
 namespace ShoppingCartStartedKata.Controllers;
 
 [ApiController]
-[Route("[controller]")]
-public class ShowCartContentController(Cart cart) : ControllerBase
+[Route("carts")]
+public class ShowCartContentController(IList<Cart> carts) : ControllerBase
 {
     [HttpGet]
-    public Cart Get()
+    public Cart GetCart([FromRoute] string cartId)
     {
-        return cart;
+        if (!carts.Any(cart => cart.Id == cartId))
+            CreateCart(cartId);
+        
+        return carts.Single(cart => cart.Id == cartId);
+    }
+
+    private void CreateCart(string cartId)
+    {
+        carts.Add(new Cart(cartId));
     }
 }

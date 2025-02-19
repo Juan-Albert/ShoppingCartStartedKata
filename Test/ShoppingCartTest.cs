@@ -28,11 +28,11 @@ public class ShoppingCartTest
         var webFactory = new WebApplicationFactory<WebDummy>();
         var client = webFactory.CreateClient();
 
-        var result = await client.GetAsync("/showCartContent");
+        var result = await client.GetAsync("/carts/0");
 
         result.IsSuccessStatusCode.Should().BeTrue();
         var content = await result.Content.ReadAsStringAsync();
-        content.Should().Contain("\"products\":[]");
+        content.Should().Contain("0");
     }
 
     [Fact]

@@ -3,7 +3,7 @@ using ShoppingCartStartedKata.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton<Cart>();
+builder.Services.AddSingleton<IList<Cart>, List<Cart>>();
 
 // Add services to the container.
 builder.Services.AddControllers();

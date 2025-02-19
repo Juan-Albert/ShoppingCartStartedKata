@@ -9,7 +9,7 @@ public class CartTest
     [Fact]
     public void AddMultipleProducts()
     {
-        var cart = new Cart();
+        var cart = new Cart("0132");
         
         cart.AddProduct([Product.Potato, Product.Tomato]);
         

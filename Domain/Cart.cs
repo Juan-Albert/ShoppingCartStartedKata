@@ -1,9 +1,10 @@
 namespace ShoppingCartStartedKata.Domain;
 
-public class Cart
+public class Cart(string Id)
 {
+    public string Id { get; } = Id;
     private readonly List<Product> products = new();
-    
+
     public IReadOnlyList<Product> Products => products;
     public Decimal TotalPrice => products.Sum(x => x.Price);
 
